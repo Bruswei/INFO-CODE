@@ -1,4 +1,6 @@
-head, body
+body
 {
-	background: url(../Resources/background.jpg);
+	background: url("../Resources/background.jpg") no-repeat;
+	color: orange;
 }
+
