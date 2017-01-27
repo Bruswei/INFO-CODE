@@ -3,3 +3,23 @@
 	display: block;
 	float: left;
 }
+
+.post-tittle
+{
+	font-weight: bold;
+	font-size: 200%;
+	padding: 10px;
+}
+
+.post-facts
+{
+	margin-left: 0px;
+	display: block;
+	text-align: justify left;
+	text-justify: inter-word;
+}
+
+.post-content
+{
+	margin-left: 260px;
+}
