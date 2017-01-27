@@ -1,25 +1,29 @@
-.post-thumb
+.container
 {
-	display: block;
 	float: left;
-}
-
-.post-tittle
-{
-	font-weight: bold;
-	font-size: 200%;
-	padding: 10px;
+	display: block;
+	text-align: justify left;
+	text-justify: inter-word;
+	width: 260px;
+	margin-left: 20px;
 }
 
 .post-facts
 {
-	margin-left: 0px;
-	display: block;
-	text-align: justify left;
-	text-justify: inter-word;
+	padding: 25px orange;
 }
+
+
+.post-title
+{
+	margin-left: 20px;
+	font-family: Arial black;
+	font-weight: bold;
+	font-size: 100%;
+}
+
 
 .post-content
 {
-	margin-left: 260px;
+	margin-left: 300px;
 }
