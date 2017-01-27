@@ -6,8 +6,9 @@ img
 
 html
 {
-	padding-right: 50px;
-	padding-left: 50px;
+	padding-top: 70px;
+	padding-right: 450px;
+	padding-left: 150px;
 }
 
 .container
@@ -18,6 +19,7 @@ html
 	text-justify: inter-word;
 	width: 260px;
 	margin-left: 20px;
+	border: solid 2px;
 }
 
 .post-facts
