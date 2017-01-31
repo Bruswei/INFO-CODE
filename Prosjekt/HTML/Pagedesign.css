@@ -42,7 +42,20 @@ html
 	margin-left: 20px;
 	text-align: justify left;
 	display: block;
-	width: 50%;
+	width: 700px;
 	float:left;
 }
 
+@media screen and (max-width:959px)
+{	
+	.container
+	{
+		width:27%;
+	}
+
+	.noekkelord
+	{
+		width:73%;
+	}
+	
+}
