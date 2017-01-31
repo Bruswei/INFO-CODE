@@ -1,6 +1,6 @@
 body
 {
-	background: url("../Resources/background.png") no-repeat;
+	background: url("../Resources/background.png") repeat;
 	color: #AAC7FD;
 	font-family: arial;
 

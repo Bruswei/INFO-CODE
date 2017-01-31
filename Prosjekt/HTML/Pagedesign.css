@@ -39,8 +39,10 @@ html
 
 .noekkelord
 {
-	margin-left: 300px;
+	margin-left: 20px;
 	text-align: justify left;
 	display: block;
+	width: 50%;
+	float:left;
 }
 
