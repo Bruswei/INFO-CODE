@@ -39,7 +39,6 @@ html
 .noekkelord
 {
 	margin-left: 20px;
-	text-align: justify left;
 	display: block;
 	width: 700px;
 	float:left;
@@ -56,19 +55,20 @@ html
 	.noekkelord
 	{
 		width:200%;
+		margin-left: 0px;
 	}
 	
 }
 
-@media screen and (max-width:375px)
+@media screen and (max-width:743px)
 {
 	.container
 	{
-		width:375px;
+		width:260px;
 	}
 
 	.noekkelord
 	{
-		width:375px;
+		width:300px;
 	}
 }
