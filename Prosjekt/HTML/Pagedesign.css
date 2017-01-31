@@ -41,5 +41,6 @@ html
 {
 	margin-left: 300px;
 	text-align: justify left;
+	display: block;
 }
 
