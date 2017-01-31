@@ -16,7 +16,6 @@ html
 	float: left;
 	display: block;
 	text-align: justify left;
-	text-justify: inter-word;
 	width: 260px;
 	margin-left: 20px;
 	border: solid 2px;
@@ -46,16 +45,30 @@ html
 	float:left;
 }
 
-@media screen and (max-width:959px)
+@media screen and (max-width:960px)
 {	
 	.container
 	{
-		width:27%;
+		width:260px;
+		margin-left: 0px;
 	}
 
 	.noekkelord
 	{
-		width:73%;
+		width:200%;
 	}
 	
+}
+
+@media screen and (max-width:375px)
+{
+	.container
+	{
+		width:375px;
+	}
+
+	.noekkelord
+	{
+		width:375px;
+	}
 }
