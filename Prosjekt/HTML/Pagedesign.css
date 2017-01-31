@@ -22,9 +22,9 @@ html
 	border: solid 2px;
 }
 
-.post-facts
+.fakter
 {
-	padding: 25px orange;
+	padding: 25px;
 }
 
 
@@ -37,7 +37,7 @@ html
 }
 
 
-.post-content
+.noekkelord
 {
 	margin-left: 300px;
 }
