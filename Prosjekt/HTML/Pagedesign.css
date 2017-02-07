@@ -13,7 +13,7 @@ html
 
 .container
 {
-	margin-left: -15%;
+	margin-left: 0%;
 	display: block;
 	text-align: justify left;
 	width: 260px;
@@ -32,15 +32,15 @@ html
 	font-family: Arial black;
 	font-weight: bold;
 	font-size: 100%;
-	margin-left: -15%;	
+	margin-left: 0%;	
 }
 
 
 .noekkelord
 {
-	margin-left: 30%;
+	margin-left: 350px;
 	display: block;
-	width: 120%;
+	width: 100%;
 }
 
 @media screen and (max-width:900px)
@@ -48,14 +48,13 @@ html
 	.container
 	{
 		width:260px;
-		margin-left: -15%;
 	}
 	
 	.noekkelord
 	{
 		width: 200%;
 		float:left;
-		margin-left: -15%;
+		margin-left: 0%;
 	}
 }
 
