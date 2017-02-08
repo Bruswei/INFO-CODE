@@ -1,0 +1,42 @@
+.wrapper
+{
+	width: 1600px;
+	margin: 0 auto 0 auto;
+}
+
+.heading
+{
+	height: 100px;
+	padding: 20px;
+	text-align: left;
+	background-color: lightgrey;
+}
+
+.navigation
+{
+	height:50px;
+}
+
+.content
+{
+	min-height: 1000px;
+	width: 1000px;
+	float: left;
+}
+
+.sidebar
+{
+	width: 600px;
+	float: right;
+	background-color: lightblue;
+	min-height: 1000px;
+}
+
+.footer
+{
+	clear:both;
+	background:lightyellow;
+	height: 40px;
+	text-align: center;
+	padding:10px;
+}
