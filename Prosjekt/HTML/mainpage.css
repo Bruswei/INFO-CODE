@@ -6,8 +6,9 @@
 
 .heading
 {
-	height: 100px;
+	height: 50px;
 	padding: 20px;
+	border: solid 2px;
 	text-align: left;
 	background-color: lightgrey;
 }
@@ -39,4 +40,32 @@
 	height: 40px;
 	text-align: center;
 	padding:10px;
+}
+
+.searchbar
+{
+	float:right;
+}
+
+#search
+{
+	padding: 7px;
+	border: 1px solid #607d8b;
+	width: 220px;
+}
+
+#submit
+{
+	padding: 7px;
+	background: #607d8b;
+	border: 1px solid #607d8b;
+	color:white;
+	margin-left: -5px;
+	cursor:pointer;
+}
+
+#submit:hover
+{
+	background: #333;
+	transition:all 0.5s;
 }
