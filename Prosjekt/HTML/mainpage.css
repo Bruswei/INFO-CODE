@@ -1,11 +1,64 @@
+
+
+/* Denne delen er for navigasjonsknapper*/
+.navigation
+{
+	background-color: #222;
+	width: 960px;
+	margin: 0 auto 0 auto;
+}
+
+.nav_wrapper
+{
+	width: 960px;
+	margin: 0 auto;
+	text-align: left;
+}
+
+.navigation ul
+{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	position: relative;
+}
+
+.navigation ul li
+{
+	display: inline-block;
+}
+
+.navigation ul li:hover
+{
+	background-color: #333;
+}
+
+.navigation ul li a, visited
+{
+	color: #ccc;
+	display: block;
+	padding: 15px;
+	text-decoration: none;
+}
+
+.navigation ul li a:hover 
+{
+	color: #ccc;
+	text-decoration: none;
+}
+
+/* Kan lage knappene til drop-down buttons */
+
 .wrapper
 {
-	width: 1600px;
+	width: 960px;
 	margin: 0 auto 0 auto;
 }
 
 .heading
 {
+	font-family: Arial black;
+	font-weight: bold;
 	height: 50px;
 	padding: 20px;
 	border: solid 2px;
@@ -13,21 +66,17 @@
 	background-color: lightgrey;
 }
 
-.navigation
-{
-	height:50px;
-}
-
 .content
 {
-	min-height: 1300px;
-	width: 1000px;
+	min-height: 1000px;
+	width: 700px;
 	float: left;
+	margin: 0 auto 0 auto;
 }
 
 .sidebar
 {
-	width: 300px;
+	width: 260px;
 	float: right;
 	background-color: lightblue;
 	min-height: 1000px;
@@ -42,16 +91,18 @@
 	padding:10px;
 }
 
+
+/* Søkbaren	*/
 .searchbar
 {
-	float:right;
+	margin-left: 5%;
 }
 
 #search
 {
 	padding: 7px;
 	border: 1px solid #607d8b;
-	width: 220px;
+	width: 180px;
 }
 
 #submit
@@ -69,3 +120,4 @@
 	background: #333;
 	transition:all 0.5s;
 }
+
