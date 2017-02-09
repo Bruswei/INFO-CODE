@@ -3,17 +3,18 @@ html
 {
 	font-size: 90%;
 }
+
 /* Denne delen er for navigasjonsknapper*/
 .navigation
 {
 	background-color: #222;
-	width: 960px;
+	width: 1200px;
 	margin: 0 auto 0 auto;
 }
 
 .nav_wrapper
 {
-	width: 960px;
+	width: 1200px;
 	margin: 0 auto;
 	text-align: left;
 }
@@ -52,12 +53,14 @@ html
 
 /* Kan lage knappene til drop-down buttons */
 
+/* wrapper for tittelen*/
 .wrapper
 {
-	width: 960px;
+	width: 1200px;
 	margin: 0 auto 0 auto;
 }
 
+/* Tittelen */
 .heading
 {
 	font-family: Arial black;
@@ -69,22 +72,33 @@ html
 	background-color: lightgrey;
 }
 
+/* Main content */
 .content
 {
-	min-height: 1000px;
-	width: 700px;
-	float: left;
-	margin: 0 auto 0 auto;
+	min-height: 700px;
+	width: 600px;
+	margin: 0 0 0 0;
 	font-size: 16px;
+	float: middle;
 }
 
-.sidebar
+/* Side bars */
+.leftbar,.rightbar
 {
-	width: 260px;
-	float: right;
+	width: 300px;
 	background-color: lightblue;
 	min-height: 1000px;
-	font-size: 16px;
+}
+
+/* Side bar på høyre og leftbar på venstre*/
+.rightbar
+{
+	float: right;
+}
+
+.leftbar
+{
+	float: left;
 }
 
 .footer
@@ -97,7 +111,6 @@ html
 	font-size: 16px;
 }
 
-
 /* Søkbaren	*/
 .searchbar
 {
@@ -108,7 +121,7 @@ html
 {
 	padding: 7px;
 	border: 1px solid #607d8b;
-	width: 180px;
+	width: 210px;
 }
 
 #submit
@@ -128,10 +141,10 @@ html
 }
 
 /* 
-	Oppløsning design for mindre oppløsninger 
+	Oppløsning design for oppløsninger som er mindre enn 1280 
 	Denne brukes for alle plateformer og iphone 6s plus
 */
-@media screen and (max-width: 959px)
+@media screen and (max-width: 1279px)
 {
 	.navigation
 	{
