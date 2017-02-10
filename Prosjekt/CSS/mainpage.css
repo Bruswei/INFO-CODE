@@ -248,17 +248,16 @@ html
 
 /*************************************************************************************/
 
-.thumb
+.hovedbildet
 {
 	float:left;
-	width: 100%;
+	max-width: 300px;
 
 }
 
 .fakter
 {
 	float: left;
-	margin-left: 10px;
 	padding: 5px;
 	width: ;
 }
