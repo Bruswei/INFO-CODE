@@ -244,3 +244,21 @@ html
 		width: 100%;
 	}
 }
+
+/*************************************************************************************/
+
+.thumb
+{
+	float:left;
+}
+
+.fakter
+{
+	float: left;
+	margin-left: 10px;
+}
+
+.noekkelord
+{
+	float:left;
+}
