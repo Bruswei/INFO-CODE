@@ -175,7 +175,6 @@ html
 	.wrapper
 	{
 		width: 720px;
-		margin-left: 5%;
 	}	
 
 	.navigation
@@ -222,7 +221,6 @@ html
 	.wrapper
 	{
 		width: 300px;
-		margin-left: -2%;
 	}
 	.searchbar
 	{
@@ -253,12 +251,16 @@ html
 .thumb
 {
 	float:left;
+	width: 100%;
+
 }
 
 .fakter
 {
 	float: left;
 	margin-left: 10px;
+	padding: 5px;
+	width: ;
 }
 
 .noekkelord
