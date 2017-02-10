@@ -181,7 +181,6 @@ html
 	.navigation
 	{
 		width: 720px;
-		margin-left: 5%;
 	}
 
 	.heading
@@ -215,7 +214,6 @@ html
 	.navigation
 	{
 		width:300px;
-		margin-left: -2%;
 	}
 	.navigation ul li
 	{
@@ -226,6 +224,11 @@ html
 		width: 300px;
 		margin-left: -2%;
 	}
+	.searchbar
+	{
+		width: 250px;
+		margin-left: 5%
+	}
 
 	html
 	{
@@ -235,6 +238,13 @@ html
 	.leftbar, .rightbar
 	{
 		width: 100%;
+	}
+
+	#submit
+	{
+		width: 100px;
+		margin-left: 28%;
+		margin-right: 30%;
 	}
 }
 
