@@ -78,7 +78,6 @@ html
 	min-height: 700px;
 	width: 600px;
 	margin: 0 0 0 0;
-	font-size: 16px;
 	float: middle;
 }
 
@@ -174,17 +173,17 @@ html
 	En oppløsning for 799 - 500 px 
 	Denne kan brukes til Iphone SE
 */
-@media screen and (max-width: 799px)
+@media screen and (max-width: 985px)
 {
 	.wrapper
 	{
-		width: 500px;
+		width: 720px;
 		margin-left: 5%;
 	}	
 
 	.navigation
 	{
-		width: 500px;
+		width: 720px;
 		margin-left: 5%;
 	}
 
@@ -192,6 +191,22 @@ html
 	{
 		height: auto;
 	}
+
+	.content, .rightbar
+	{
+		float: left;
+	}
+
+	.leftbar, .rightbar
+	{
+		width: 50%;
+	}
+
+	.leftbar
+	{
+		float: left;
+	}
+
 }
 
 /* 
@@ -222,5 +237,10 @@ html
 	#search
 	{
 		width:200px;
+	}
+
+	.leftbar, .rightbar
+	{
+		width: 100%;
 	}
 }
