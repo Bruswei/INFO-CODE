@@ -113,14 +113,15 @@ html
 /* Søkbaren	*/
 .searchbar
 {
-	margin-left: 5%;
+	width: 80%;
+	margin-left: 10%;
 }
 
 #search
 {
 	padding: 7px;
 	border: 1px solid #607d8b;
-	width: 210px;
+	width: 90%;
 }
 
 #submit
@@ -162,10 +163,6 @@ html
 	.rightbar, .leftbar
 	{	
 		width: 20%;
-	}
-	#search
-	{
-		width: 65%;
 	}
 }
 
@@ -233,10 +230,6 @@ html
 	html
 	{
 		font-size: 130%;
-	}
-	#search
-	{
-		width:200px;
 	}
 
 	.leftbar, .rightbar
