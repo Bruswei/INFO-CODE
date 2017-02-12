@@ -139,6 +139,12 @@ html
 	transition:all 0.5s;
 }
 
+.tilbakemelding
+{
+	float:left;
+	padding-left: 10%;
+}
+
 /* 
 	Oppløsning design for oppløsninger som er mindre enn 1280 
 	Denne brukes for alle plateformer og iphone 6s plus
@@ -199,6 +205,11 @@ html
 	.leftbar
 	{
 		float: left;
+	}
+
+	.tilbakemelding
+	{
+		padding-left: 0;
 	}
 
 }
