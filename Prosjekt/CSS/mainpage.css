@@ -68,7 +68,7 @@ html
 	padding: 20px;
 	border: solid 2px;
 	text-align: left;
-	background-color: lightgrey;
+	background-color: #eaeae1;
 }
 
 /* Main content */
@@ -84,7 +84,7 @@ html
 .leftbar,.rightbar
 {
 	width: 25%;
-	background-color: lightblue;
+	background-color:#eaeae1;
 	min-height: 1000px;
 }
 
@@ -102,7 +102,7 @@ html
 .footer
 {
 	clear:both;
-	background:lightyellow;
+	background:#c2d6d6;
 	height: 40px;
 	text-align: center;
 	padding:10px;
@@ -190,6 +190,11 @@ html
 	.heading
 	{
 		height: auto;
+	}
+
+	.content
+	{
+		width: 100%;
 	}
 
 	.content, .rightbar
