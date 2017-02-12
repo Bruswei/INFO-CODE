@@ -272,6 +272,12 @@ html
 #mi_link, #I_link
 {
 	display: block;
-	float:left;
-	width:	30%;
+	width: 300px;
+	padding: 10px;
 }
+
+.column
+{
+	float:left;
+}
+
