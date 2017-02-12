@@ -1,4 +1,3 @@
-
 html
 {
 	font-size: 90%;
@@ -265,4 +264,14 @@ html
 .noekkelord
 {
 	float:left;
+}
+
+/***********************************************************************************/
+
+/* Søkresultat */
+#mi_link, #I_link
+{
+	display: block;
+	float:left;
+	width:	30%;
 }
