@@ -75,15 +75,15 @@ html
 .content
 {
 	min-height: 700px;
-	width: 600px;
+	width: 50%;
 	margin: 0 0 0 0;
-	float: middle;
+	float:left;
 }
 
 /* Side bars */
 .leftbar,.rightbar
 {
-	width: 300px;
+	width: 25%;
 	background-color: lightblue;
 	min-height: 1000px;
 }
@@ -326,3 +326,9 @@ html
 	float:left;
 }
 
+/**********************************************************************************/
+.main.post
+{
+	background:#639c9c;
+	width: 100%;
+}
