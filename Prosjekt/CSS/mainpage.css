@@ -102,6 +102,7 @@ html
 .footer
 {
 	clear:both;
+	
 	background:#c2d6d6;
 	height: 40px;
 	text-align: center;
@@ -331,9 +332,16 @@ html
 	float:left;
 }
 
-/**********************************************************************************/
+/******************	Styling av hovedsiden	***********************************/
 .main.post
 {
 	background:#639c9c;
 	width: 100%;
 }
+
+#mi_link, #I_link
+{
+	max-width: 80%;
+}
+
+
