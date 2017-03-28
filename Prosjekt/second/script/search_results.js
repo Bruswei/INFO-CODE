@@ -17,7 +17,7 @@ function display_X() {
 */
 
 function display_movie(movie){
-	
+	document.write(movie);
 }
 
 window.onload = function() {
@@ -25,13 +25,12 @@ window.onload = function() {
 
 	search_results = movies_object;
 
-	var movie;
+	var movieFound;
 	
 	if (query_params.film_title) {
         film_title = document.getElementById("film_title");
 		//Her kan dere for eksempel kalle en søkefunksjon som søker for tittel.
-
-		movie = search_for_title(film_title. search_results);
+		movieFound = search_for_title(film_title. search_results);
     }
 	
 	if (query_params.actor) {
@@ -55,4 +54,5 @@ window.onload = function() {
     }
 	
 	//Her kan dere for eksempel kalle en (display) funksjon som viser søkeresultater 
+	display_movie(movieFound);
 }
