@@ -4,11 +4,12 @@ function search_for_X() {
 */
 
 function search_for_title(filmTitle, moviesObject){
-	for (movie in moviesObject){
-		if (movie.otitle === filmTitle){
-			console.log("movie found!")
+	for (movie_id in moviesObject){
+		movieDetails = moviesObject[movie_id];
+		if (movieDetails["otitle"] === filmTitle){
+			document.write(movieDetails["otitle"]);
+			return movieDetails;
 		}		
-		console.log(movie.otitle);
 	}
 	document.write("No such movie found.");
 }
