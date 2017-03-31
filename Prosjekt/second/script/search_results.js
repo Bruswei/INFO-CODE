@@ -5,10 +5,12 @@ function search_for_X() {
 
 function search_for_title(filmTitle, moviesObject){
 	for (movie in moviesObject){
-		if (movie.film_title === filmTitle){
-			return movie;
-		}
+		if (movie.otitle === filmTitle){
+			console.log("movie found!")
+		}		
+		console.log(movie.otitle);
 	}
+	document.write("No such movie found.");
 }
 
 /* Her kan dere implementere en display function som viser resulatetene av søket. For eksempel:
@@ -28,9 +30,11 @@ window.onload = function() {
 	var movieFound;
 	
 	if (query_params.film_title) {
-        film_title = document.getElementById("film_title");
+     	film_title = document.getElementById("film_title");
 		//Her kan dere for eksempel kalle en søkefunksjon som søker for tittel.
-		movieFound = search_for_title(film_title. search_results);
+
+		movieFound = search_for_title(query_params.film_title, search_results);
+	//	display_movie(movieFound);
     }
 	
 	if (query_params.actor) {
@@ -54,5 +58,4 @@ window.onload = function() {
     }
 	
 	//Her kan dere for eksempel kalle en (display) funksjon som viser søkeresultater 
-	display_movie(movieFound);
 }
