@@ -8,12 +8,14 @@
 	<script src="script/object.js" type="text/javascript"></script>
   </head>
   <body>
-	<div id="film_title">{{ movie.otitle }}</div>
-	<div id="actor">{{ movie.folk }}</div>
-	<div id="director"></div>
+	<div id="film_title">tittelen er <span>{{ searchResults[0].otitle }}</span></div>
+	<div id="actor">{{ }}</div>
+	<div id="director">{{  }}</div>
 	<div id="genre"></div>
 	<div id="country"></div>
 	<!-- Returnere resultatene som en (ordered <ol>) liste -->
-	<ol id="res_list"></ol>
+	<ol id="res_list" data-repeat="searchResults">
+		<li><span>{{ $elt.otitle }}</span> <span>{{ $elt.folk }}</span></li>
+	</ol>
   </body>
 </html>
