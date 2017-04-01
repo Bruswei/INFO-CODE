@@ -57,6 +57,7 @@ html
 {
 	width: 1200px;
 	margin: 0 auto 0 auto;
+	min-height: 1200px;
 }
 
 /* Tittelen */
@@ -320,11 +321,11 @@ html
 /***********************************************************************************/
 
 /* Søkresultat */
-#mi_link, #I_link
+.post-title
 {
-	display: block;
-	width: 300px;
-	padding: 10px;
+	min-height: 600px;
+	text-align: left;
+
 }
 
 .column
@@ -345,9 +346,5 @@ html
 	max-width: 80%;
 }
 
-.quickSearch{
-
-	
-}
 
 

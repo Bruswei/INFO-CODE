@@ -11,38 +11,38 @@
 		<script src="../Scripts/object.js" type="text/javascript"></script>
   </head>
   <body>
-		<div class="navigation">
+		<div class="wrapper">
 				<div class="heading">
 						<h1>Velkommen til hovedsiden!</h1>
 				</div>
-				<div class=nav_wrapper>
-					<ul>
-						<li><a href="../index.html">Hjem</a></li><li>
-						<a href="#">Filmer</a></li><li>
-						<a href="http://www.imdb.com/">IMDB</a></li><li>
-						<a href="#">Om oss</a></li><li>
-						<a href="#">logg inn</a></li>
-					</ul>
-			</div>
-			<form class="searchbar" action="search_results.html" method="get"> <!-- Foreløpig linket til statis side-->
-						<input type="film_title" name="film_title" placeholder="Skriv title på filmen her" id="search"><input type="submit" value="søk" id="submit" />
+			  <div class="navigation">
+					<div class=nav_wrapper>
+						<ul>
+							<li><a href="../index.html">Hjem</a></li><li>
+							<a href="#">Filmer</a></li><li>
+							<a href="http://www.imdb.com/">IMDB</a></li><li>
+							<a href="#">Om oss</a></li><li>
+							<a href="#">logg inn</a></li>
+						</ul>
+					</div>
+					<form class="searchbar" action="search_results.html" method="get"> <!-- Foreløpig linket til statis side-->
+							<input type="film_title" name="film_title" placeholder="Skriv title på filmen her" id="search"><input type="submit" value="søk" id="submit" />
 					</form>
-		</div>
-		<div class="wrapper">
-			<div class="post-title">
-				<h1>Søkresultater: </h1>				
-			</div>
-				<div id="film_title"></span></div>
-				<div id="actor">{{ }}</div>
-				<div id="director">{{  }}</div>
-				<div id="genre"></div>
-				<div id="country"></div>
+			  </div>
+				<div class="post-title">
+					<h1>Søkresultater: </h1>				
+				
 					<!-- Returnere resultatene som en (ordered <ol>) liste -->
 					<ol id="res_list" data-if="searchResults && searchResults.length > 0" data-repeat="searchResults">
 						<!-- Her har vi et lite problem med linken. -->
-						<h3><li><span> <a href="show_movie.html?">{{ $elt.otitle }}</a> </span></li><h3>
+						<h3><li><span> <a href="show_movie.html?{{ $elt.id }}">{{ $elt.otitle }}</a> </span></li><h3>
 					</ol>
 				<div data-if="!searchResults || searchResults.length == 0">Beklager, ingen resultater funnet.</div>
-  </body>
+				</div>
+				<div class="footer">
+						This website is developed by YPS.
+				</div>
+			</div>
+	</body>
 </html>
 
