@@ -3,15 +3,14 @@ function search_for_X() {
 }
 */
 
-function search_for_title(filmTitle, moviesObject){
-	for (movie_id in moviesObject){
-		movieDetails = moviesObject[movie_id];
-		if (movieDetails["otitle"] === filmTitle){
-			document.write(movieDetails["otitle"]);
+function search_for_title(searchTitle, movieDict){
+	for (key in movieDict){
+		movieDetails = movieDict[key];
+		if (movieDetails.otitle.toLowerCase() === searchTitle.toLowerCase()){
 			return movieDetails;
 		}		
 	}
-	document.write("No such movie found.");
+	return null;
 }
 
 /* Her kan dere implementere en display function som viser resulatetene av søket. For eksempel:
@@ -28,7 +27,8 @@ window.onload = function() {
 
 	search_results = movies_object;
 
-	var movieFound;
+	// denne variablen lagres moviedetaljer fra søkefunksjonen.
+	var foundMovieDetails;
 	
 	if (query_params.film_title) {
      	film_title = document.getElementById("film_title");
