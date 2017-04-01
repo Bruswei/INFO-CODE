@@ -18,8 +18,29 @@ function display_X() {
 }
 */
 
-function display_movie(movie){
-	document.write(movie);
+var movie = {}
+
+// Implementerer "handlebars"-aktige HTML-templater/databinding
+function display(){
+	// Hent alle noder fra DOM
+	var dom = document.getElementsByTagName("*"); 
+	
+	for (var i = 0; i < dom.length; i++) {
+		text = dom[i].textContent;
+		length = text.length;
+
+		// Evaluer cmd fra alle div-noder som har tekst på formen {{ cmd }}
+		// og erstatt med resultatet av eval
+		if (length > 4 
+		    && (text[0] === "{")
+			&& (text[1] === "{")
+			&& (text[length-1] === "}")
+			&& (text[length-2] === "}")) {
+			innerCode = text.substring(2, length-2)
+			result = eval(innerCode)
+			dom[i].textContent = eval(innerCode)
+		}
+	}
 }
 
 window.onload = function() {
@@ -28,13 +49,13 @@ window.onload = function() {
 	search_results = movies_object;
 
 	// denne variablen lagres moviedetaljer fra søkefunksjonen.
-	var foundMovieDetails;
+	var foundMovie;
 	
 	if (query_params.film_title) {
      	film_title = document.getElementById("film_title");
 		//Her kan dere for eksempel kalle en søkefunksjon som søker for tittel.
 
-		movieFound = search_for_title(query_params.film_title, search_results);
+		foundMovie = search_for_title(query_params.film_title, search_results);
 	//	display_movie(movieFound);
     }
 	
@@ -59,4 +80,6 @@ window.onload = function() {
     }
 	
 	//Her kan dere for eksempel kalle en (display) funksjon som viser søkeresultater 
+	movie = foundMovie
+	display()
 }
