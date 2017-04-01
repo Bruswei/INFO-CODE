@@ -3,6 +3,8 @@ function panic(message) {
     alert(message);
 }
 
+var displayMovie = {};
+
 function add_row(table, left, right) {
     new_row = document.createElement("TR");
     left_cell = document.createElement("TD");
@@ -25,6 +27,7 @@ window.onload = function() {
     
     // get the movie_object from the "database" movies_object
     movie_object = movies_object[query_params.id];
+    displayMovie = movie_object;
     if (!movie_object) {
 	panic("Could not retrieve movie_object!");
 	return;
@@ -69,4 +72,6 @@ window.onload = function() {
 	    add_row(review_table, left, right);
 	}
     }
+
+    display();
 };

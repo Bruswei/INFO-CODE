@@ -14,6 +14,7 @@ function recurse_dom(node) {
 	ifAttr = attributes ? attributes.getNamedItem("data-if") || null : null;
 	ifVal = ifAttr ? ifAttr.value : null;
 	hrefAttr = attributes ? attributes.getNamedItem("href") : null;
+	srcAttr = attributes ? attributes.getNamedItem("src") : null;
 
 	// Håndterer data-if attributt, som i HTML-templatet brukes som 
 	// <tag data-if="condition">. Hvis "condition" ikke er truthy,
@@ -65,6 +66,21 @@ function recurse_dom(node) {
 	// Gjør verdisubstitusjon i href-tagger. Statements lukket i {{ }} blir byttet ut med evaluering.
 	if (hrefAttr) {
 		hrefAttr.value = hrefAttr.value.replace(new RegExp('{{([^{^}]*)}}', 'g'), 
+			function(match, p, offset, string) {
+				var result; 
+				try {
+					result = eval(p);
+				} catch (e) {
+					result = match;
+				}
+				return result;
+			}
+		)
+	}
+
+	// Gjør verdisubstitusjon i src-tagger. Statements lukket i {{ }} blir byttet ut med evaluering.
+	if (srcAttr) {
+		srcAttr.value = srcAttr.value.replace(new RegExp('{{([^{^}]*)}}', 'g'), 
 			function(match, p, offset, string) {
 				var result; 
 				try {
