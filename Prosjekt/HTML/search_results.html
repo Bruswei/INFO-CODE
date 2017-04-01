@@ -3,20 +3,43 @@
 <html>
   <meta charset="utf-8"/>
   <head>
+		<title>Søkresultat</title>
+		<link rel="stylesheet" href="../CSS/background.css">
+		<link rel="stylesheet" href="../CSS/mainpage.css">
     <script src="../Scripts/query_params.js" type="text/javascript"></script>
-	<script src="../Scripts/search_results.js" type="text/javascript"></script>
-	<script src="../Scripts/object.js" type="text/javascript"></script>
+		<script src="../Scripts/search_results.js" type="text/javascript"></script>
+		<script src="../Scripts/object.js" type="text/javascript"></script>
   </head>
   <body>
-	<div id="film_title"></span></div>
-	<div id="actor">{{ }}</div>
-	<div id="director">{{  }}</div>
-	<div id="genre"></div>
-	<div id="country"></div>
-	<!-- Returnere resultatene som en (ordered <ol>) liste -->
-	<ol id="res_list" data-if="searchResults && searchResults.length > 0" data-repeat="searchResults">
-		<li><span><b>{{ $elt.otitle }}</b></span> <span>{{ $elt.folk }}</span></li>
-	</ol>
-	<div data-if="!searchResults || searchResults.length == 0">Beklager, ingen resultater funnet.</div>
+		<div class="navigation">
+				<div class="heading">
+						<h1>Velkommen til hovedsiden!</h1>
+				</div>
+				<div class=nav_wrapper>
+					<ul>
+						<li><a href="../index.html">Hjem</a></li><li>
+						<a href="#">Filmer</a></li><li>
+						<a href="http://www.imdb.com/">IMDB</a></li><li>
+						<a href="#">Om oss</a></li><li>
+						<a href="#">logg inn</a></li>
+					</ul>
+			</div>
+			<form class="searchbar" action="search_results.html" method="get"> <!-- Foreløpig linket til statis side-->
+						<input type="film_title" name="film_title" placeholder="Skriv title på filmen her" id="search"><input type="submit" value="søk" id="submit" />
+					</form>
+		</div>
+
+		<div id="film_title"></span></div>
+		<div id="actor">{{ }}</div>
+		<div id="director">{{  }}</div>
+		<div id="genre"></div>
+		<div id="country"></div>
+			<!-- Returnere resultatene som en (ordered <ol>) liste -->
+			<ol id="res_list" data-if="searchResults && searchResults.length > 0" data-repeat="searchResults">
+				<!-- Her har vi et lite problem med linken. -->
+				<li><span> <a href="show_movie.html?">{{ $elt.otitle }}</a> </span> <span>{{ $elt.folk }}</span></li>
+			</ol>
+		<div data-if="!searchResults || searchResults.length == 0">Beklager, ingen resultater funnet.</div>
   </body>
 </html>
+
