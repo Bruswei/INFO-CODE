@@ -35,7 +35,7 @@
 					<!-- Returnere resultatene som en (ordered <ol>) liste -->
 					<ol id="res_list" data-if="searchResults && searchResults.length > 0" data-repeat="searchResults">
 						<!-- Her har vi et lite problem med linken. -->
-						<h3><li><span> <a href="show_movie.html?{{ $elt.id }}">{{ $elt.otitle }}</a> </span></li><h3>
+						<h3><li><span> <a href="show_movie.html?id={{$elt.id}}">{{ $elt.otitle }}</a> </span></li><h3>
 					</ol>
 				<div data-if="!searchResults || searchResults.length == 0">Beklager, ingen resultater funnet.</div>
 				</div>

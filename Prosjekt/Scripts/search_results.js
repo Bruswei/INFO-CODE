@@ -31,11 +31,13 @@ function recurse_dom(node) {
 	
 	text = node.textContent;
 	length = text ? text.length || 0 : 0;
+	attributes = node.attributes;
 
-	repeatAttr = node.attributes ? node.attributes.getNamedItem("data-repeat") || null : null;
+	repeatAttr = attributes ? attributes.getNamedItem("data-repeat") || null : null;
 	repeatVal = repeatAttr ? repeatAttr.value : null; 
-	ifAttr = node.attributes ? node.attributes.getNamedItem("data-if") || null : null;
+	ifAttr = attributes ? attributes.getNamedItem("data-if") || null : null;
 	ifVal = ifAttr ? ifAttr.value : null;
+	hrefAttr = attributes ? attributes.getNamedItem("href") : null;
 
 	// Håndterer data-if attributt, som i HTML-templatet brukes som 
 	// <tag data-if="condition">. Hvis "condition" ikke er truthy,
@@ -84,25 +86,36 @@ function recurse_dom(node) {
 		node.removeChild(child);
 	}
 
-	// Gjør verdisubstitusjon. Statements lukket i {{ }} blir byttet ut med evaluering.
-	if (!node.hasChildNodes() 
-		&& length > 4 
-		&& (text[0] === "{")
-		&& (text[1] === "{")
-		&& (text[length-1] === "}")
-		&& (text[length-2] === "}")) {
-
-		var innerCode = text.substring(2, length-2);
-		var result = "";
-		
-		try {
-			result = eval(innerCode)
-		} catch (e) {
-			return;
-		}
-		
-		node.textContent = result;
+	// Gjør verdisubstitusjon i href-tagger. Statements lukket i {{ }} blir byttet ut med evaluering.
+	if (hrefAttr) {
+		hrefAttr.value = hrefAttr.value.replace(new RegExp('{{([^{^}]*)}}', 'g'), 
+			function(match, p, offset, string) {
+				var result; 
+				try {
+					result = eval(p);
+				} catch (e) {
+					result = match;
+				}
+				return result;
+			}
+		)
 	}
+
+	// Gjør verdisubstitusjon. Statements lukket i {{ }} blir byttet ut med evaluering.
+	if (!node.hasChildNodes() && node.textContent) {
+		node.textContent = node.textContent.replace(new RegExp('{{([^{^}]*)}}', 'g'),
+		function(match, p, offset, string) {
+			var result;
+			try {
+				result = eval(p);
+			} catch (e) {
+				result = match;
+			}
+
+			return result;
+		})
+	}
+
 	
 	children.forEach(recurse_dom)
 }
