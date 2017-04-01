@@ -28,18 +28,21 @@
 						<input type="film_title" name="film_title" placeholder="Skriv title på filmen her" id="search"><input type="submit" value="søk" id="submit" />
 					</form>
 		</div>
-
-		<div id="film_title"></span></div>
-		<div id="actor">{{ }}</div>
-		<div id="director">{{  }}</div>
-		<div id="genre"></div>
-		<div id="country"></div>
-			<!-- Returnere resultatene som en (ordered <ol>) liste -->
-			<ol id="res_list" data-if="searchResults && searchResults.length > 0" data-repeat="searchResults">
-				<!-- Her har vi et lite problem med linken. -->
-				<li><span> <a href="show_movie.html?">{{ $elt.otitle }}</a> </span> <span>{{ $elt.folk }}</span></li>
-			</ol>
-		<div data-if="!searchResults || searchResults.length == 0">Beklager, ingen resultater funnet.</div>
+		<div class="wrapper">
+			<div class="post-title">
+				<h1>Søkresultater: </h1>				
+			</div>
+				<div id="film_title"></span></div>
+				<div id="actor">{{ }}</div>
+				<div id="director">{{  }}</div>
+				<div id="genre"></div>
+				<div id="country"></div>
+					<!-- Returnere resultatene som en (ordered <ol>) liste -->
+					<ol id="res_list" data-if="searchResults && searchResults.length > 0" data-repeat="searchResults">
+						<!-- Her har vi et lite problem med linken. -->
+						<h3><li><span> <a href="show_movie.html?">{{ $elt.otitle }}</a> </span></li><h3>
+					</ol>
+				<div data-if="!searchResults || searchResults.length == 0">Beklager, ingen resultater funnet.</div>
   </body>
 </html>
 
