@@ -6,7 +6,7 @@ function panic(message) {
 // Modellen 
 var displayMovie = {};
 
-var displayReview = {};
+var displayReview = [];
 
 var reviewStats = {
     average: null, 
@@ -36,13 +36,14 @@ window.onload = function() {
     // get the movie_object from the "database" movies_object
     movie_object = movies_object[query_params.id];
     displayMovie = movie_object;
-    displayReview = reviews_object[query_params.id];
+    review_object = reviews_object[query_params.id];
 
     // >>>>>
-    if (displayReview){
+    if (review_object){
         var ratingSum = 0, numReviews = 0;
-        for (key in displayReview){
-            ratingSum += displayReview[key].rating;
+        for (key in review_object){
+            displayReview.push(review_object[key])
+            ratingSum += review_object[key].rating;
             numReviews++;
         }
         // Oppdaterer global.
