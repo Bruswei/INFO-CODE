@@ -3,6 +3,7 @@ function search_for_X() {
 }
 */
 
+// Denne funksjonen er IKKE lenger i bruk siden jeg har skrevet en avansert søkefunksjon.
 function search_for_title(searchTitle, movieDict){
 	results = [];
 
@@ -26,12 +27,15 @@ Se template_engine.js
 function advanced_search(title, actor, director, genre, country, movieDict, genreDict){
 	results = [];
  
+	// Lopper gjennom movieDict og ser om samme keyen finnes også i genreDict.
+	// Dersom det er, legge vi genre som en av egenskapene til movieDict.
 	for (key in movieDict){
 		if (key in genreDict) {
 			movieDict[key].genre = genreDict[key]
 		}
 	}
 
+	// Kopierer filmbasen til results array.
 	for (key in movieDict){
 		results.push(movieDict[key]);
 	}
@@ -126,5 +130,6 @@ window.onload = function() {
 
 	//Her kan dere for eksempel kalle en (display) funksjon som viser søkeresultater 
 
+	//template_engine.js
 	display();
 }
