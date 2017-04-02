@@ -3,7 +3,15 @@ function panic(message) {
     alert(message);
 }
 
+// Modellen 
 var displayMovie = {};
+
+var displayReview = {};
+
+var reviewStats = {
+    average: null, 
+    numReviews: 0
+};
 
 function add_row(table, left, right) {
     new_row = document.createElement("TR");
@@ -28,6 +36,20 @@ window.onload = function() {
     // get the movie_object from the "database" movies_object
     movie_object = movies_object[query_params.id];
     displayMovie = movie_object;
+    displayReview = reviews_object[query_params.id];
+
+    // >>>>>
+    if (displayReview){
+        var ratingSum = 0, numReviews = 0;
+        for (key in displayReview){
+            ratingSum += displayReview[key].rating;
+            numReviews++;
+        }
+        // Oppdaterer global.
+        reviewStats.average = ratingSum / numReviews;
+        reviewStats.numReviews = numReviews;
+    }
+
     if (!movie_object) {
 	panic("Could not retrieve movie_object!");
 	return;
