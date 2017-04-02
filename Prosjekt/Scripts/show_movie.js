@@ -38,7 +38,7 @@ window.onload = function() {
     displayMovie = movie_object;
     review_object = reviews_object[query_params.id];
 
-    // >>>>>
+    // Hvis filmen har en review.
     if (review_object){
         var ratingSum = 0, numReviews = 0;
         for (key in review_object){
