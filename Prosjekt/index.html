@@ -6,6 +6,9 @@
 			<link rel="stylesheet" type="text/css" href="CSS/background.css"></link>
 			<link rel="stylesheet" type="text/css" href="CSS/mainpage.css"></link>
 			<meta name="viewport" content="width-device-width, initial-scale=1.0">
+			<script src="../Scripts/template_engine.js" type="text/javascript"></script>
+			<script src="../Scripts/borrowed.js" type="text/javascript"></script>
+			<script src="../Scripts/wish_list.js" type="text/javascript"></script>
 		</head>
 
 		<body>
@@ -45,7 +48,20 @@
 				</div>
 
 				<div class="rightbar">
-					bjart lee
+					<div>
+						<div>Lånte filmer:</div>
+						<div data-if="borrowed_array.length == 0">Ingen lånte filmer.</div>
+						<ul data-if="borrowed_array.length > 0" data-repeat="borrowed_array">
+							<li><a href="HTML/show_movie.html?id={{$elt.id}}">{{$elt.name}}</a></li>
+						</ul>
+					</div>
+					<div>
+						<div>Ǿnskeliste:</div>
+						<div data-if="wishlist_array.length == 0">Ingen filmer i ønskelisten.</div>
+						<ul data-if="wishlist_array.length > 0" data-repeat="wishlist_array">
+							<li><a href="HTML/show_movie.html?id={{$elt.id}}">{{$elt.name}}</a></li>
+						</ul>
+					</div>
 				</div>
 
 				<div class="content">
@@ -67,5 +83,5 @@
 			</div> <!-- /.wrapper -->
 
 		</body>
-	
+	<script>display();</script>
 	</html>
