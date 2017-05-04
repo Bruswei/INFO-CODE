@@ -38,25 +38,19 @@
 
 				<div class="leftbar">
 					<h2>NYESTE FILMER:</h2>
-					<a href="HTML/mi.html">
-						<img src="Resources/mi_1.jpg" id="mi_link" alt="Mission Impossible">
-					</a>
-					<a href="HTML/Intouchables.html">
-						<img src="Resources/The_Intouchables_3.jpg" id="I_link" alt="Intouchables">
-					</a>
 
 				</div>
 
 				<div class="rightbar">
 					<div>
-						<div>Lånte filmer:</div>
+						<h2>Lånte filmer:</h2>
 						<div data-if="borrowed_array.length == 0">Ingen lånte filmer.</div>
 						<ul data-if="borrowed_array.length > 0" data-repeat="borrowed_array">
 							<li><a href="HTML/show_movie.html?id={{$elt.id}}">{{$elt.name}}</a></li>
 						</ul>
 					</div>
 					<div>
-						<div>Ǿnskeliste:</div>
+						<h2>Ǿnskeliste:</h2>
 						<div data-if="wishlist_array.length == 0">Ingen filmer i ønskelisten.</div>
 						<ul data-if="wishlist_array.length > 0" data-repeat="wishlist_array">
 							<li><a href="HTML/show_movie.html?id={{$elt.id}}">{{$elt.name}}</a></li>
