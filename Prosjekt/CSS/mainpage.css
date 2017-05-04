@@ -147,6 +147,19 @@ html
 	padding-left: 10%;
 }
 
+#fake_user{
+	float: right;
+	margin-top: 15px;
+	margin-right: 15px;
+	color: white;
+}
+
+.bilde
+{
+	max-width: 300px;
+
+}
+
 /*''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''*/
 /* 
 	Oppløsning design for oppløsninger som er mindre enn 1280 
@@ -272,15 +285,10 @@ html
 
 /*********************************** design av innholdet ***********************************************/
 
+
 .hovedbildet
 {
 	float:left;
-	max-width: 300px;
-
-}
-
-.bilde
-{
 	max-width: 300px;
 
 }
