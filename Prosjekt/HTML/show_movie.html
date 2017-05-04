@@ -8,48 +8,75 @@
     <script type="text/javascript" src="../Scripts/reviews.js"></script>
     <script type="text/javascript" src="../Scripts/query_params.js"></script>
     <script type="text/javascript" src="../Scripts/show_movie.js"></script>
+   	<link rel="stylesheet" type="text/css" href="../CSS/background.css">
+   	<link rel="stylesheet" type="text/css" href="../CSS/mainpage.css">
   </head>
   <body>
-    <h1 id="otitle"></h1>
-	<!-- Alt under er en enkelt formatert tabell som viser all informasjon som er tilgjengelig om denne filmen -->
-    <img src="https://nelson.uib.no/o/{{Math.floor(displayMovie.id / 1000)}}/{{displayMovie.id}}.jpg" class="bilde">
-    <div data-if="displayReview">Gjennomsnittskarakter:&nbsp;{{ reviewStats.average }}</div>
-    
-    <hr>
-    <h5>Denne siden viser detaljer om en film.</h5>
-    <table id="movie_stat_table" border=1>
-      <caption>Table: Stats from "object"</caption>
-      <tr> 
-		<td align="center"><b>Key</b></td><td align="center"><b>Value</b></td>
-      </tr>
-    </table>
-    
-    <table id="genre_stat_table"  border=1>
-      <caption>Table: Stats from "object_genre"</caption>
-      <tr>
-		<td align="center"><b>Key</b></td><td align="center"><b>Value</b></td>
-      </tr>
-    </table>
-    
-    <table id="review_stat_table" border=1>
-      <caption>Table: Stats from "reivew"</caption>
-      <tr>
-		<td align="center"><b>Key</b></td><td align="center"><b>Value</b></td>
-      </tr>
-    </table>
+   <div class="wrapper">
+				<div class="heading">
+					<h1>Velkommen til hovedsiden!</h1>
+				</div>
 
-    <div>
-      <iframe data-if='displayMovie["youtube trailer id"]' width="420" height="315" src='https://www.youtube.com/embed/{{displayMovie["youtube trailer id"]}}'></iframe>
-    </div>
+				<div class="navigation">
+					<div class=nav_wrapper>
+						<ul>
+							<li><a href="../index.html">Hjem</a></li><li>
+							<a href="advanced_search.html">Avansert søk</a></li><li>
+							<a href="http://www.imdb.com/">IMDB</a></li><li>
+							<a href="#">Om oss</a></li><li>
+							<a href="#">logg inn</a></li>
+						</ul>
+					</div>
+					
+					<!--Searchbar funksjon-->
+					<fieldset>
+						<form class="searchbar" action="HTML/search_results.html" method="get"> <!-- Foreløpig linket til statis side-->
+							<input type="film_title" name="film_title" placeholder="Skriv title på filmen her" id="search"><input type="submit" value="søk" id="submit" />
+						</form>
+					</fieldset>
+				</div>
+    
+          <h1 id="otitle"></h1>
+        <!-- Alt under er en enkelt formatert tabell som viser all informasjon som er tilgjengelig om denne filmen -->
+          <img src="https://nelson.uib.no/o/{{Math.floor(displayMovie.id / 1000)}}/{{displayMovie.id}}.jpg" class="bilde">
+          <div data-if="displayReview">Gjennomsnittskarakter:&nbsp;{{ reviewStats.average }}</div>
+          
+          <hr>
+          <h5>Denne siden viser detaljer om en film.</h5>
+          <table id="movie_stat_table" border=1>
+            <caption>Table: Stats from "object"</caption>
+            <tr> 
+          <td align="center"><b>Key</b></td><td align="center"><b>Value</b></td>
+            </tr>
+          </table>
+          
+          <table id="genre_stat_table"  border=1>
+            <caption>Table: Stats from "object_genre"</caption>
+            <tr>
+          <td align="center"><b>Key</b></td><td align="center"><b>Value</b></td>
+            </tr>
+          </table>
+          
+          <table id="review_stat_table" border=1>
+            <caption>Table: Stats from "reivew"</caption>
+            <tr>
+          <td align="center"><b>Key</b></td><td align="center"><b>Value</b></td>
+            </tr>
+          </table>
 
-    <h2>Anmeldelser</h2>  
-    <div data-if="!displayReview">Ingen anmeldelser.</div>
-    <div data-repeat="displayReview">
-      <div> 
-        <div>Brukernavn:&nbsp;{{$elt.username}}</div> 
-        <div>Karakter:&nbsp;{{$elt.rating}}</div>
-        <div data-if="$elt.comment.length > 0">Kommentar:&nbsp;{{$elt.comment}}</div><br>
-      </div>
-    </div>
+          <div>
+            <iframe data-if='displayMovie["youtube trailer id"]' width="420" height="315" src='https://www.youtube.com/embed/{{displayMovie["youtube trailer id"]}}'></iframe>
+          </div>
+
+          <h2>Anmeldelser</h2>  
+          <div data-if="!displayReview">Ingen anmeldelser.</div>
+          <div data-repeat="displayReview">
+            <div> 
+              <div>Brukernavn:&nbsp;{{$elt.username}}</div> 
+              <div>Karakter:&nbsp;{{$elt.rating}}</div>
+              <div data-if="$elt.comment.length > 0">Kommentar:&nbsp;{{$elt.comment}}</div><br>
+            </div>
+          </div>
+        </div>
   </body>
 </html>
