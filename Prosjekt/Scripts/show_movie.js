@@ -70,18 +70,18 @@ window.onload = function() {
     // add a "debug-table" on the bottom showing all elements from movie_object
     stats_table = document.getElementById("movie_stat_table");
     for (key in movie_object) {
-        left = document.createTextNode(key);
-        right = document.createTextNode(movie_object[key]);
-        add_row(stats_table, left, right);
+        if (!movie_object[key] == "") {
+            left = document.createTextNode(key);
+            right = document.createTextNode(movie_object[key]);
+            add_row(stats_table, left, right);
+        }
     }
     
     // add a "debug-table" on the bottom showing all genre info
-    genre_table = document.getElementById("genre_stat_table");
     for (var i in genre_object) {
-		left = document.createTextNode(i);
-		right = document.createTextNode(genre_object[i]);
-		add_row(genre_table, left, right);
+           document.getElementById('div_test').innerHTML += (genre_object[i]) + ", ";
     }
+    
 
     // review object debug-table
     review_table = document.getElementById("review_stat_table");
