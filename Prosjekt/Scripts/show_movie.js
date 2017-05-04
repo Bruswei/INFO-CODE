@@ -44,10 +44,10 @@ window.onload = function() {
         for (key in review_object){
             displayReview.push(review_object[key])
             ratingSum += review_object[key].rating;
-            numReviews++;
+            numReviews++;       
         }
         // Oppdaterer global.
-        reviewStats.average = ratingSum / numReviews;
+        reviewStats.average = Math.round(ratingSum / numReviews);
         reviewStats.numReviews = numReviews;
     }
 
@@ -86,9 +86,10 @@ window.onload = function() {
     // review object debug-table
     review_table = document.getElementById("review_stat_table");
     for (key in review_object) {
-	left = document.createTextNode(key);
-	right = document.createTextNode(review_object[key]);
-	add_row(review_table, left, right);
+        left = document.createTextNode(key);
+        right = document.createTextNode(review_object[key]);
+        add_row(review_table, left, right);
+
 	for (subkey in review_object[key]) {
 	    left = document.createTextNode(" -> " + subkey);
 	    right = document.createTextNode(review_object[key][subkey]);

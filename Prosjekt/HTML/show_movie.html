@@ -38,8 +38,8 @@
     
           <h1 id="otitle"></h1>
         <!-- Alt under er en enkelt formatert tabell som viser all informasjon som er tilgjengelig om denne filmen -->
-          <img src="https://nelson.uib.no/o/{{Math.floor(displayMovie.id / 1000)}}/{{displayMovie.id}}.jpg" class="bilde">
-          <div data-if="displayReview">Gjennomsnittskarakter:&nbsp;{{ reviewStats.average }}</div>
+          <img src="https://nelson.uib.no/o/{{Math.floor(displayMovie.id / 1000)}}/{{displayMovie.id}}.jpg" class="bilde"><br>
+          <div data-if="displayReview"><h3>Gjennomsnittskarakter:&nbsp;{{ reviewStats.average }}</h3></div>
           
           <hr>
           <table id="movie_stat_table" border="0" cellpadding="0" cellspacing="0">
@@ -52,19 +52,13 @@
           <div id="div_test">genre: </div>
           <br>
                  
-          <table id="review_stat_table" border="1">
-            <caption>Table: Stats from "reivew"</caption>
-            <tr>
-          <td align="center"><b>Key</b></td><td align="center"><b>Value</b></td>
-            </tr>
-          </table>
-
+          <!-- sjekker om det er youtubeID, dersom ja vise iframe-->
           <div>
             <iframe data-if='displayMovie["youtube trailer id"]' width="420" height="315" src='https://www.youtube.com/embed/{{displayMovie["youtube trailer id"]}}'></iframe>
           </div>
 
           <h2>Anmeldelser</h2>  
-          <div data-if="!displayReview">Ingen anmeldelser.</div>
+          <div id="review_stat_table" data-if="!displayReview">Ingen anmeldelser.</div>
           <div data-repeat="displayReview">
             <div> 
               <div>Brukernavn:&nbsp;{{$elt.username}}</div> 
@@ -72,6 +66,7 @@
               <div data-if="$elt.comment.length > 0">Kommentar:&nbsp;{{$elt.comment}}</div><br>
             </div>
           </div>
+          <br>
         </div>
   </body>
 </html>
